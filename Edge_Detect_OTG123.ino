@@ -16,7 +16,7 @@ void setup()
 }
 void loop()
 {
-  if(digitalRead(LS) && digitalRead(RS))     // Move Forward
+  if(!digitalRead(LS) && !digitalRead(RS))     // Move Forward
   {
     digitalWrite(LM1, HIGH);
     digitalWrite(LM2, LOW);
@@ -41,7 +41,7 @@ void loop()
     digitalWrite(RM2, LOW);
   }
   
-  if(!(digitalRead(LS)) && !(digitalRead(RS)))     // stop
+  if((digitalRead(LS)) && (digitalRead(RS)))     // stop
   {
     digitalWrite(LM1, LOW);
     digitalWrite(LM2, LOW);
